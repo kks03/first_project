@@ -22,11 +22,8 @@ if __name__ == '__main__':
     c2.deposit(30000)
     c3.withdraw(100000)
     print(c1, c2, c3)
-    if c2.withdraw(1000000) < 0:
-        print("Steve의 잔고가 부족합니다.")
-    else:
-        print(c1, c2, c3)
-
+    c2.withdraw(1000000)
+    print(c1, c2, c3)
 
 #week3-2
 
