@@ -59,27 +59,27 @@ if __name__ == '__main__':
 
 class Item:
     count = 0
-    def __init__(self, t, p):
-        self.t = t
-        self.p = p
+    def __init__(self, title, price):
+        self.title = title
+        self.price = price
         Item.count += 1
     def __str__(self):
-        return f'제목: {self.t}, 가격: {self.p}'
+        return f'제목: {self.title}, 가격: {self.price}'
     def getprice(self):
-        print(f'* {self.t} 의 가격은 {self.p} 원 입니다.')
+        print(f'* {self.title} 의 가격은 {self.price} 원 입니다.')
 class Book(Item):
-    def __init__(self, t, p, pages, au):
-        super().__init__(t, p)
+    def __init__(self, title, price, pages, author):
+        super().__init__(title, price)
         self.pages = pages
-        self.au = au
+        self.author = author
     def __str__(self):
-        return super().__str__() + f', 페이지 수: {self.pages}, 저자: {self.au}'
+        return super().__str__() + f', 페이지 수: {self.pages}, 저자: {self.author}'
 class Magazine(Item):
-    def __init__(self, t, p, m):
-        super().__init__(t, p)
-        self.m = m
+    def __init__(self, title, price, month):
+        super().__init__(title, pages)
+        self.month = month
     def __str__(self):
-        return super().__str__() + f', 출간 월: {self.m}'
+        return super().__str__() + f', 출간 월: {self.month}'
 if __name__ == '__main__':
     b1 = Book('소나기', 10000, 124, '황순원')
     b2 = Book('메밀꽃 필 무렵', 15000, 142, '이효석')
