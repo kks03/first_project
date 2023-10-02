@@ -1,0 +1,124 @@
+#week4-1
+
+from tkinter import *
+
+
+window = Tk()
+window.title("애완동물 선택하기")
+window.geometry("400x400")
+
+label1 = Label(window, text = "좋아하는 동물 투표", font = ("궁서체", 30), fg = "blue")
+
+def go():
+    global photo
+    if chk.get() == 1:
+        photo = PhotoImage(file = "C:/Users/82109/Downloads/jpeg파일/dog.gif")
+        label2 = Label(window, image = photo)
+        label2.pack()
+    elif chk.get() == 2:
+        photo = PhotoImage(file = "C:/Users/82109/Downloads/jpeg파일/cat.gif")
+        label2 = Label(window, image = photo)
+        label2.pack()
+    elif chk.get() == 3:
+        photo = PhotoImage(file = "C:/Users/82109/Downloads/jpeg파일/rabbit.gif")
+        label2 = Label(window, image = photo)
+        label2.pack()
+
+chk = IntVar()
+
+rb1 = Radiobutton(window, text = "강아지", variable = chk, value = 1)
+rb2 = Radiobutton(window, text = "고양이", variable = chk, value = 2)
+rb3 = Radiobutton(window, text = "토끼", variable = chk, value = 3)
+label1.pack()
+rb1.pack()
+rb2.pack()
+rb3.pack()
+
+button1 = Button(window, text = "사진 보기", command = go)
+button1.pack()
+window.mainloop()
+
+#week4-2
+
+from tkinter import *
+
+window = Tk()
+
+window.title("tk")
+#window.geometry("200x100")
+
+list1 = ['jeju1.gif', 'jeju2.gif', 'jeju3.gif', 'jeju4.gif', 'jeju5.gif', 'jeju6.gif', 'jeju7.gif', 'jeju8.gif', 'jeju9.gif']
+i = 0
+
+def compile_L():
+    global i, list1
+    if(i>0): i-=1
+    else: i=8
+    label1.configure(text = list1[i])
+
+def compile_R():
+    global i
+    if(i<8): i+=1
+    else: i=0
+    label1.configure(text = list1[i])
+
+button1 = Button(window, text = "<<이전",command = compile_L)
+button2 = Button(window, text='다음>>', command = compile_R)
+label1 = Label(window, text = list1[i])
+
+button1.pack(side = LEFT)
+label1.pack(side = LEFT)
+button2.pack(side = LEFT)
+
+window.mainloop()
+
+
+#week3
+
+from tkinter import *
+from tkinter.simpledialog import *
+
+window = Tk()
+
+window.title("tk")
+window.geometry("200x600")
+
+str1 = ''
+5
+def game():
+    global str1
+    str1 += ent1.get() + '\n'
+    label2.configure(text = str1)
+
+def game2():
+    global str1
+    list1 = str1.split('\n')
+    str2 = ''
+    list1 = list1[:-1]
+    list1.pop(-1) # 여기 수정할것
+    for i in range(len(list1)):
+        str2 += list1[i]
+        str2 += '\n'
+    str1 = str2
+    label2.configure(text = str2)
+
+
+label1 = Label(window, text = "Add a Task:")
+label2 = Label(window, width = 200)
+ent1 = Entry(bg = 'white', width = 200)
+button1 = Button(window, text = "Add Task", command = game)
+button2 = Button(window, text = "Delete Task" , command = game2)
+
+window.title
+window.pop(insert"rlaskd wkdmsjdci:)(str rlqnsdk )
+
+label1.pack()
+ent1.pack()
+button1.pack()
+label2.pack()
+button2.pack()
+
+window.mainloop()
+
+
+
